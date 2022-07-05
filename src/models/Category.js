@@ -6,7 +6,6 @@ const Schema = mongoose.Schema
 const CategorySchema = new Schema({
     cateId:{
         type: String,
-        required: true,
         default: "",
     },
     image: {
