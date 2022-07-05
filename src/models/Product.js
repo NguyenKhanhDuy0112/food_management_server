@@ -9,7 +9,6 @@ mongoose.plugin(slug)
 const ProductShema = new Schema({
     sku:{
         type: String,
-        required: true,
         default: ""
     },
     imageBanner: {
