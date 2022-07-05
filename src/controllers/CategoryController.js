@@ -16,7 +16,7 @@ class CategoryController{
 
             const categories = await  Category.paginate({}, options)
             const {docs, ...others} = categories
-            res.status(200).json({docs, ...others})
+            res.status(200).json({data: docs, ...others})
           
         }catch(err){
             res.status(500).json({errorMessage: "Error server"})

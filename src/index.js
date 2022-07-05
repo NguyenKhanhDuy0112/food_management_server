@@ -1,18 +1,22 @@
 const express = require('express')
+const app = express()
+const cors = require('cors')
+
 const bodyParser =  require('body-parser')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const db = require('./config/db')
-const dotenv = require('dotenv')
-const cors = require('cors')
-dotenv.config()
+
 
 const router = require('./routes')
-const app = express()
-const PORT = process.env.PORT || 3000 
+app.use(cors())
+
+const dotenv = require('dotenv')
+
+const PORT = process.env.PORT || 1400
+dotenv.config()
 
 app.use(morgan('common'))
-app.use(cors())
 
 app.use(cookieParser())
 
@@ -26,6 +30,10 @@ db.connect()
 //Config routes
 router(app)
 
+
+// app.get('/categories', (req, res) => {
+//     res.status(200).json({message: "Hello"})
+// })
 
 //Listen on port 
 app.listen(PORT, () => console.log(`Service is running on port ${PORT}`))
