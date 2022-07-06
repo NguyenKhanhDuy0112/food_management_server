@@ -39,6 +39,10 @@ const ProductShema = new Schema({
         type: String,
         default: ""
     },
+    price: {
+        type: Number,
+        default: 0,
+    }
     published: {
         type: Boolean,
         default: true,
