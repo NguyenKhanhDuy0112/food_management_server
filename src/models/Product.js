@@ -31,6 +31,10 @@ const ProductShema = new Schema({
         type: Number,
         default: 0
     },
+    discount: {
+        type: Number,
+        default: 0
+    },
     unit: {
         type: String,
         default: ""
